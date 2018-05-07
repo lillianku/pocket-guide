@@ -14,7 +14,7 @@
     <p><%=templatePlace.url%></p>
     <p><%=templatePlace.notes%></p>
 
-    <form method='POST' action='/places'>
+    <form method='POST' action='/places/<%=templatePlace._id%>'>
       <input name='_method' type='hidden' value='PUT'/>
       <input name='country' type='text' placeholder='Country' />
       <input name='city' type='text' placeholder='City' />
