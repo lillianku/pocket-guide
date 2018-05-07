@@ -6,7 +6,9 @@ const
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   Place = require('./models/models.js'),
-  Item = require('./models/models.js')
+  Item = require('./models/models.js'),
+  PlacesRouter = require('./routes/places.js'),
+  ItemsRouter = require('./routes/packing.js')
 
 
 //MIDDLEWARE
@@ -19,7 +21,8 @@ app.use(methodOverride((req, res) => {
     return method
   };
 }));
-
+app.use('/places', PlacesRouter);
+app.use('/packinglist', ItemsRouter);
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
 
