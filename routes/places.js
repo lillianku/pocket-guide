@@ -54,6 +54,22 @@ PlacesRouter.delete('/:id', (req, res)=>{
     });
   });
 
+PlacesRouter.put('/:id', (req, res)=>{
+    let id = req.params.id;
+    let updatedCountry = req.body.country;
+    let updatedCity = req.body.city;
+    let updatedName = req.body.name;
+    let updatedURL = req.body.url;
+    let updatedNotes = req.body.notes;
+    Place.findByIdAndUpdate(id, {$set:{country:updatedCountry, city:updatedCity, name:updatedName, url:updatedURL, notes:updatedNotes}}).then(updatedPlace=>{
+      // res.send(updateMessage);//Postman testing
+      res.render('place.ejs', {
+        templatePlace:updatedPlace
+      })
+    }, ()=>{
+      res.status(400).send('400 Bad Request');
+    });
+  });
 
 
 module.exports = PlacesRouter;
