@@ -4,6 +4,8 @@ const
   mongoose = require('./../db/mongoose.js'),
   Item = require('./../models/item.js')
 
+ItemsRouter.use(express.static('static'));
+
 ItemsRouter.get("/", (req, res)=>{
   Item.find().then(items=>{
       res.render('packing.ejs', {

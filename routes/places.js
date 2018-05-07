@@ -4,6 +4,8 @@ const
   mongoose = require('./../db/mongoose.js'),
   Place = require('./../models/place.js')
 
+PlacesRouter.use(express.static('static'));
+
 PlacesRouter.get("/", (req, res)=>{
   Place.find().then(places=>{
       res.render('places.ejs', {
@@ -30,6 +32,17 @@ PlacesRouter.post('/', (req, res) => {
     });
 });
 
+PlacesRouter.get('/:id', (req, res)=>{
+    let id = req.params.id;
+    Place.findById(id).then(place=>{
+      res.render('place.ejs', {
+        templatePlace: place
+      });
+      //res.send(trip);//Postman testing
+    }, error => {
+      res.status(400).send('400 Bad Request')
+    });
+  });
 
 
 
