@@ -32,7 +32,7 @@ ItemsRouter.post('/', (req, res) => {
 ItemsRouter.delete('/:id', (req, res)=>{
     let id = req.params.id;
     Item.findByIdAndRemove(id).then(removedItem=>{
-      // res.send(removedMessage);//Postman testing
+      // res.send(removedItem);//Postman testing
       res.redirect('/packinglist');
     }, ()=>{
       res.status(400).send('400 Bad Request');
@@ -44,7 +44,7 @@ ItemsRouter.put('/:id', (req, res)=>{
     let updatedItem = req.body.item;
     let updatedDetails = req.body.details;
     Item.findByIdAndUpdate(id, {$set:{item:updatedItem, details:updatedDetails}}).then(updatedItem=>{
-      // res.send(updateMessage);//Postman testing
+      // res.send(updateItem);//Postman testing
       res.redirect('/packinglist');
     }, ()=>{
       res.status(400).send('400 Bad Request');
