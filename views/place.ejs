@@ -14,5 +14,20 @@
     <p><%=templatePlace.url%></p>
     <p><%=templatePlace.notes%></p>
 
+    <form method='POST' action='/places'>
+      <input name='_method' type='hidden' value='PUT'/>
+      <input name='country' type='text' placeholder='Country' />
+      <input name='city' type='text' placeholder='City' />
+      <input name='name' type='text' placeholder='Place' />
+      <input name='url' type='text' placeholder='Website' />
+      <input name='notes' type='text' placeholder='Notes' />
+      <input type='submit' value='Update it!' />
+    </form>
+
+    <form action="/places/<%=templatePlace._id%>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete it!">
+    </form>
+
   </body>
 </html>

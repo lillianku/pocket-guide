@@ -44,6 +44,16 @@ PlacesRouter.get('/:id', (req, res)=>{
     });
   });
 
+PlacesRouter.delete('/:id', (req, res)=>{
+    let id = req.params.id;
+    Place.findByIdAndRemove(id).then(removedPlace=>{
+      // res.send(removedMessage);//Postman testing
+      res.redirect('/places');
+    }, ()=>{
+      res.status(400).send('400 Bad Request');
+    });
+  });
+
 
 
 module.exports = PlacesRouter;
