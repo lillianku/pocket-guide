@@ -5,8 +5,8 @@ const
   mongoose = require('./db/mongoose.js'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
-  Place = require('./models/models.js'),
-  Item = require('./models/models.js'),
+  Place = require('./models/place.js'),
+  Item = require('./models/item.js'),
   PlacesRouter = require('./routes/places.js'),
   ItemsRouter = require('./routes/packing.js')
 

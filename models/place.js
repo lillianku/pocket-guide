@@ -8,9 +8,4 @@ const Place = mongoose.model('Place', {
   notes: {type: String}
 });
 
-const Item = mongoose.model('Item', {
-  item: {type: String},
-  details: {type: String}
-});
-
-module.exports = Place, Item;
+module.exports = Place;

@@ -2,7 +2,7 @@ const
   express = require('express'),
   PlacesRouter = express.Router(),
   mongoose = require('./../db/mongoose.js'),
-  Place = require('./../models/models.js')
+  Place = require('./../models/place.js')
 
 PlacesRouter.get("/", (req, res)=>{
   Place.find().then(places=>{

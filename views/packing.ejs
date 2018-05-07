@@ -9,5 +9,18 @@
     <h1>Packing List</h1>
     <% include ./partials/navbar.ejs %>
 
+    <form method='POST' action='/packinglist'>
+      <input name='item' type='text' placeholder='Item' />
+      <input name='details' type='text' placeholder='Additional Info' />
+      <input type='submit' value='Add it!' />
+    </form>
+
+    <div class="board">
+        <% templateItems.forEach((item) => {%>
+          <div style="border: 1px solid black; margin: 5px">
+              <h3><%=item.item%></h3>
+          </div>
+        <%})%>
+      </div>
   </body>
 </html>
