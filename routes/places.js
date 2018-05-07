@@ -19,6 +19,7 @@ PlacesRouter.post('/', (req, res) => {
     let newPlace = new Place({
       country: req.body.country,
       city: req.body.city,
+      name: req.body.name,
       url: req.body.url,
       notes: req.body.notes
     });
