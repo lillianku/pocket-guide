@@ -20,6 +20,19 @@
           <div style="border: 1px solid black; margin: 5px">
               <h3><%=item.item%></h3>
               <h4><%=item.details%></h4>
+
+              <form method='POST' action='/packinglist/<%=item._id%>'>
+                <input name='_method' type='hidden' value='PUT'/>
+                <input name='item' type='text' placeholder='Item' />
+                <input name='details' type='text' placeholder='Additional Info' />
+                <input type='submit' value='Update it!' />
+              </form>
+
+              <form action="/packinglist/<%=item._id%>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete it!">
+              </form>
+
           </div>
         <%})%>
       </div>

@@ -6,7 +6,7 @@ const
 
 ItemsRouter.use(express.static('static'));
 
-ItemsRouter.get("/", (req, res)=>{
+ItemsRouter.get('/', (req, res)=>{
   Item.find().then(items=>{
       res.render('packing.ejs', {
         templateItems: items
@@ -28,6 +28,28 @@ ItemsRouter.post('/', (req, res) => {
       res.status(400).send('400 BAD REQUEST');
     });
 });
+
+ItemsRouter.delete('/:id', (req, res)=>{
+    let id = req.params.id;
+    Item.findByIdAndRemove(id).then(removedItem=>{
+      // res.send(removedMessage);//Postman testing
+      res.redirect('/packinglist');
+    }, ()=>{
+      res.status(400).send('400 Bad Request');
+    });
+  });
+
+ItemsRouter.put('/:id', (req, res)=>{
+    let id = req.params.id;
+    let updatedItem = req.body.item;
+    let updatedDetails = req.body.details;
+    Item.findByIdAndUpdate(id, {$set:{item:updatedItem, details:updatedDetails}}).then(updatedItem=>{
+      // res.send(updateMessage);//Postman testing
+      res.redirect('/packinglist');
+    }, ()=>{
+      res.status(400).send('400 Bad Request');
+    });
+  });
 
 
 module.exports = ItemsRouter;

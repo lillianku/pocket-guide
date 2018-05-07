@@ -47,7 +47,7 @@ PlacesRouter.get('/:id', (req, res)=>{
 PlacesRouter.delete('/:id', (req, res)=>{
     let id = req.params.id;
     Place.findByIdAndRemove(id).then(removedPlace=>{
-      // res.send(removedMessage);//Postman testing
+      // res.send(removedPlace);//Postman testing
       res.redirect('/places');
     }, ()=>{
       res.status(400).send('400 Bad Request');
@@ -61,11 +61,10 @@ PlacesRouter.put('/:id', (req, res)=>{
     let updatedName = req.body.name;
     let updatedURL = req.body.url;
     let updatedNotes = req.body.notes;
-    Place.findByIdAndUpdate(id, {$set:{country:updatedCountry, city:updatedCity, name:updatedName, url:updatedURL, notes:updatedNotes}}).then(updatedPlace=>{
-      // res.send(updateMessage);//Postman testing
+    Place.findByIdAndUpdate(id, {$set:{country:updatedCountry, city:updatedCity, name:updatedName, url:updatedURL, notes:updatedNotes}}, {new:true, new:true, new:true, new:true, new:true}).then(updatedPlace=>{
       res.render('place.ejs', {
         templatePlace:updatedPlace
-      })
+      });
     }, ()=>{
       res.status(400).send('400 Bad Request');
     });
