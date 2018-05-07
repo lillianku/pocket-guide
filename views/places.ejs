@@ -9,6 +9,15 @@
     <h1>Places</h1>
     <% include ./partials/navbar.ejs %>
 
+    <form method='POST' action='/places'>
+      <input name='country' type='text' placeholder='Country' />
+      <input name='city' type='text' placeholder='City' />
+      <input name='name' type='text' placeholder='Place' />
+      <input name='url' type='text' placeholder='Website' />
+      <input name='notes' type='text' placeholder='Notes' />
+      <input type='submit' value='Add it!' />
+    </form>
+
     <div class="board">
         <% templatePlaces.forEach((place) => {%>
           <div style="border: 1px solid black; margin: 5px">
