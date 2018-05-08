@@ -30,6 +30,10 @@ app.get('/', (req, res)=>{
   res.render('home.ejs');
 });
 
+app.get('/weather', (req, res)=>{
+  res.render('weather.ejs');
+});
+
 app.listen(port, ()=>{
   console.log('Server is working');
 });
