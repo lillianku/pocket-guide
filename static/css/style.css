@@ -19,6 +19,11 @@ body{
    margin:auto;
 }
 
+.chat{
+  border: 1px solid black;
+  width: 50%;
+  position:relative;
+}
 h1{
   font-family: 'Titan One', cursive;
   color: white;

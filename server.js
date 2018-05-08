@@ -8,7 +8,9 @@ const
   Place = require('./models/place.js'),
   Item = require('./models/item.js'),
   PlacesRouter = require('./routes/places.js'),
-  ItemsRouter = require('./routes/packing.js')
+  ItemsRouter = require('./routes/packing.js'),
+  http = require('http').Server(app),
+  io = require('socket.io')(http)
 
 
 //MIDDLEWARE
@@ -34,6 +36,13 @@ app.get('/weather', (req, res)=>{
   res.render('weather.ejs');
 });
 
-app.listen(port, ()=>{
+io.on('connection', (socket)=>{
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
+
+
+http.listen(port, ()=>{
   console.log('Server is working');
 });
