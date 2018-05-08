@@ -73,7 +73,10 @@ p, span{
   display:inline;
 }
 
-.weather p, .weather span, .weather a{
+div.aw-widget-36hour-inner{
+  margin:auto;
+}
+.weather p, .weather span, .weather a, .weather h3{
   font-family: inherit;
   font-size: inherit;
   text-shadow:none;
