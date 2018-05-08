@@ -8,22 +8,28 @@
   <body>
     <h1>Places</h1>
     <% include ./partials/navbar.ejs %>
-
-    <p><%=templatePlace.city%>, <%=templatePlace.country%></p>
-    <p><%=templatePlace.name%></p>
-    <p><%=templatePlace.url%></p>
-    <p><%=templatePlace.notes%></p>
+    <div class="place">
+      <h3><%=templatePlace.city%>, <%=templatePlace.country%></h3>
+      <h4><%=templatePlace.name%></h4>
+      <a href='<%=templatePlace.url%>'><p>Website</p></a>
+      <p><%=templatePlace.notes%></p>
+    </div>
+    <br>
 
     <form method='POST' action='/places/<%=templatePlace._id%>'>
       <input name='_method' type='hidden' value='PUT'/>
-      <input name='country' type='text' placeholder='Country' />
-      <input name='city' type='text' placeholder='City' />
-      <input name='name' type='text' placeholder='Place' />
-      <input name='url' type='text' placeholder='Website' />
-      <input name='notes' type='text' placeholder='Notes' />
+      <input name='city' type='text' value='<%=templatePlace.city%>'/>
+      <input name='country' type='text' value='<%=templatePlace.country%>'/>
+      <input name='name' type='text' value='<%=templatePlace.name%>'/>
+      <input name='url' type='text' value=<%=templatePlace.url%>'/>
+      <br>
+      <br>
+      <textarea id='notes' name='notes' type='text'><%=templatePlace.notes%></textarea>
+      <br>
+      <br>
       <input type='submit' value='Update it!' />
     </form>
-
+    <br>
     <form action="/places/<%=templatePlace._id%>" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete it!">

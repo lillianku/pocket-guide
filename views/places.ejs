@@ -14,17 +14,17 @@
       <input name='city' type='text' placeholder='City' />
       <input name='name' type='text' placeholder='Place' />
       <input name='url' type='text' placeholder='Website' />
-      <input name='notes' type='text' placeholder='Notes' />
       <input type='submit' value='Add it!' />
     </form>
 
     <div class="board">
         <% templatePlaces.forEach((place) => {%>
-          <div style="border: 1px solid black; margin: 5px">
+          <div class ="place">
               <h3><%=place.city%>, <%=place.country%></h3>
-              <h4><%=place.url%></h4>
+              <h4><%=place.name%></h4>
               <a href="/places/<%=place._id%>">View More</a>
           </div>
+          <br>
         <%})%>
       </div>
 

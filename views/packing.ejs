@@ -8,16 +8,17 @@
   <body>
     <h1>Packing List</h1>
     <% include ./partials/navbar.ejs %>
-
-    <form method='POST' action='/packinglist'>
+    <span>New item:</span>
+    <form method='POST' action='/packinglist' id="add-item-form">
       <input name='item' type='text' placeholder='Item' />
       <input name='details' type='text' placeholder='Additional Info' />
       <input type='submit' value='Add it!' />
     </form>
-
+    <br>
+    <br>
     <div class="board">
         <% templateItems.forEach((item) => {%>
-          <div style="border: 1px solid black; margin: 5px">
+          <div class="place">
               <h3><%=item.item%></h3>
               <h4><%=item.details%></h4>
 
@@ -34,6 +35,7 @@
               </form>
 
           </div>
+          <br>
         <%})%>
       </div>
   </body>
