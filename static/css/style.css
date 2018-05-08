@@ -72,3 +72,9 @@ p, span{
 #add-item-form{
   display:inline;
 }
+
+.weather p, .weather span, .weather a{
+  font-family: inherit;
+  font-size: inherit;
+  text-shadow:none;
+}
