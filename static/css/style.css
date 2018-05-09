@@ -78,8 +78,8 @@ input, textarea{
 
 .delete{
   width: 100px;
-  color: white;
-  background: #eee;
+  color: black;
+  background: #e6e6e6;
   margin-top: 5px;
   height: 30px;
   position: absolute;
