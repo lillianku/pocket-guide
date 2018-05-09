@@ -8,7 +8,7 @@
   <body>
     <h1>Places</h1>
     <% include ./partials/navbar.ejs %>
-    
+
     <div class="place">
       <h3><%=templatePlace.name%></h3>
       <h4><%=templatePlace.city%>, <%=templatePlace.country%></h4>
@@ -28,12 +28,12 @@
       <textarea id='notes' name='notes' type='text'><%=templatePlace.notes%></textarea>
       <br>
       <br>
-      <input type='submit' value='Update it!' />
+      <input class="submit" type='submit' value='Update it!' />
     </form>
     <br>
     <form action="/places/<%=templatePlace._id%>" method="POST">
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete it!">
+      <input class="delete" type="submit" value="Delete it!">
     </form>
 
     <% include ./partials/sidebars.ejs %>

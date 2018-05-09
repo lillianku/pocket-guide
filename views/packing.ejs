@@ -8,12 +8,12 @@
   <body>
     <h1>Packing List</h1>
     <% include ./partials/navbar.ejs %>
-    
+
     <span>New item:</span>
     <form method='POST' action='/packinglist' id="add-item-form">
       <input name='item' type='text' placeholder='Item' />
       <input name='details' type='text' placeholder='Additional Info' />
-      <input type='submit' value='Add it!' />
+      <input class="submit" type='submit' value='Add it!' />
     </form>
     <br>
     <br>
@@ -27,12 +27,12 @@
                 <input name='_method' type='hidden' value='PUT'/>
                 <input name='item' type='text' value='<%=item.item%>' />
                 <input name='details' type='text' value='<%=item.details%>' />
-                <input type='submit' value='Update it!' />
+                <input class="submit" type='submit' value='Update it!' />
               </form>
 
               <form action="/packinglist/<%=item._id%>" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="Delete it!">
+                <input class="delete" type="submit" value="Delete it!">
               </form>
 
           </div>
