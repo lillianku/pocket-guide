@@ -55,6 +55,10 @@ a{
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+nav a{
+  margin:10px;
+}
+
 p, span{
   font-family: 'Indie Flower', cursive;
   font-size: 20px;
