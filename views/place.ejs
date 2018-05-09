@@ -12,29 +12,31 @@
     <div class="place">
       <h3><%=templatePlace.name%></h3>
       <h4><%=templatePlace.city%>, <%=templatePlace.country%></h4>
-      <a href='<%=templatePlace.url%>'><p>Website</p></a>
+      <a href='<%=templatePlace.url%>' target="_blank"><p>Website</p></a>
       <p><%=templatePlace.notes%></p>
     </div>
     <br>
 
-    <form method='POST' action='/places/<%=templatePlace._id%>'>
-      <input name='_method' type='hidden' value='PUT'/>
-      <input name='city' type='text' value='<%=templatePlace.city%>'/>
-      <input name='country' type='text' value='<%=templatePlace.country%>'/>
-      <input name='name' type='text' value='<%=templatePlace.name%>'/>
-      <input name='url' type='text' value=<%=templatePlace.url%>'/>
+    <div class="place">
+      <form method='POST' action='/places/<%=templatePlace._id%>'>
+        <input name='_method' type='hidden' value='PUT'/>
+        <input name='city' type='text' placeholder="City" value='<%=templatePlace.city%>'/>
+        <input name='country' type='text' placeholder="Country" value='<%=templatePlace.country%>'/>
+        <input name='name' type='text' placeholder="Place" value='<%=templatePlace.name%>'/>
+        <input name='url' type='text' placeholder="URL" value=<%=templatePlace.url%>'/>
+        <br>
+        <br>
+        <textarea id='notes' name='notes' placeholder="Notes"type='text'><%=templatePlace.notes%></textarea>
+        <br>
+        <br>
+        <input class="submit" type='submit' value='Update it!' />
+      </form>
       <br>
-      <br>
-      <textarea id='notes' name='notes' type='text'><%=templatePlace.notes%></textarea>
-      <br>
-      <br>
-      <input class="submit" type='submit' value='Update it!' />
-    </form>
-    <br>
-    <form action="/places/<%=templatePlace._id%>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input class="delete" type="submit" value="Delete it!">
-    </form>
+      <form action="/places/<%=templatePlace._id%>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="delete" type="submit" value="Delete it!">
+      </form>
+    </div>
 
     <% include ./partials/sidebars.ejs %>
 
