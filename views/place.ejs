@@ -35,24 +35,7 @@
       <input type="submit" value="Delete it!">
     </form>
 
-    <div id="chatwindow">
-      <div id="window">
-        <div id="title"><p>Chat</p></div>
-        <ul id="messages"></ul>
-        <form id="form" action="">
-          <input id="name" autocomplete="off" placeholder="name"/>
-          <input id="m" autocomplete="off" placeholder="message"/><button>Send</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="weather">
-      <a href="https://www.accuweather.com/en/au/newcastle/12777/weather-forecast/12777" class="aw-widget-legal">
-      <!--
-      By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
-      -->
-      </a><div id="awcc1525885844888" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1525885844888"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
-    </div>
+    <% include ./partials/sidebars.ejs %>
 
   </body>
 </html>
