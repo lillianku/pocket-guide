@@ -24,8 +24,8 @@
 
               <form method='POST' action='/packinglist/<%=item._id%>'>
                 <input name='_method' type='hidden' value='PUT'/>
-                <input name='item' type='text' placeholder='Item' />
-                <input name='details' type='text' placeholder='Additional Info' />
+                <input name='item' type='text' value='<%=item.item%>' />
+                <input name='details' type='text' value='<%=item.details%>' />
                 <input type='submit' value='Update it!' />
               </form>
 
