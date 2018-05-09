@@ -80,14 +80,16 @@ p, span{
   width: 50%;
   position:relative;
 }
-#form { background: #000; bottom: 0; width: 100%; position:absolute; bottom:0;}
+
+#title{ background: #000; width:100%; height: 25px;color: white}
+#form { background: #000; bottom: 0; width: 100%; position:absolute;}
 #form input { border: 1px solid black; padding: 10px; width: 90%; margin-right: .5%; }
 #form button { width: 20%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-#messages { list-style-type: none; margin: 0; padding: 0;overflow: scroll; height:322px;}
-#messages li { padding: 5px 10px; text-align: left;}
-#messages li:nth-child(odd) { background: #eee; text-align: left;}
-#window {width: 100%; height:400px; margin:auto; position:relative}
-#chatwindow{ width: 23%;border:1px solid black; position:absolute; top:20%;left:0;}
+#messages { list-style-type: none; margin: 0; padding: 0;overflow: scroll; height:400px;}
+#messages li { padding: 5px 10px; text-align: left; font-family: 'Indie Flower', cursive;margin: 0px;}
+#messages li:nth-child(odd) { background: #eee; text-align: left;  font-family: 'Indie Flower', cursive;margin: 0px;}
+#window {width: 100%; height:500px; margin:auto; position:relative}
+#chatwindow{ width: 23%;border:2px solid black; position:absolute; top:20%;left:0;}
 
 /* weather widget css */
 div.aw-widget-36hour-inner{
