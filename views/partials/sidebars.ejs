@@ -4,8 +4,9 @@
     <ul id="messages"></ul>
     <%# insert exisiting messages from mongo %>
     <form id="form" method='POST' action="/messages">
-      <input id="name" autocomplete="off" placeholder="name"/>
-      <input id="message" autocomplete="off" placeholder="message"/><button>Send</button>
+      <input id="name" name="name" type='text' placeholder="name"/>
+      <input id="message"  name="message" type='text' placeholder="message"/>
+      <input class="submit" type='submit' value='Send'/>
     </form>
   </div>
 </div>

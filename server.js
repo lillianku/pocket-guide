@@ -40,9 +40,11 @@ app.get('/weather', (req, res)=>{
 app.post('/messages', (req, res)=>{
   let newMessage = new Message({
     name: req.body.name,
-    message: req.body.message,
+    message: req.body.message
   });
-  newMessage.save();
+  newMessage.save().then(message=>{
+    res.send(message);
+  });
 });
 
 app.get('/messages', (req, res)=>{
