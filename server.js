@@ -7,6 +7,7 @@ const
   methodOverride = require('method-override'),
   Place = require('./models/place.js'),
   Item = require('./models/item.js'),
+  Message = require('./models/messages.js'),
   PlacesRouter = require('./routes/places.js'),
   ItemsRouter = require('./routes/packing.js'),
   http = require('http').Server(app),
@@ -34,6 +35,20 @@ app.get('/', (req, res)=>{
 
 app.get('/weather', (req, res)=>{
   res.render('weather.ejs');
+});
+
+app.post('/messages', (req, res)=>{
+  let newMessage = new Message({
+    name: req.body.name,
+    message: req.body.message,
+  });
+  newMessage.save();
+});
+
+app.get('/messages', (req, res)=>{
+  Message.find().then(messages=>{
+      res.send(messages);//Postman testing
+  });
 });
 
 io.on('connection', (socket)=>{

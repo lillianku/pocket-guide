@@ -2,9 +2,10 @@
   <div id="window">
     <div id="title"><p>Chat</p></div>
     <ul id="messages"></ul>
-    <form id="form" action="">
+    <%# insert exisiting messages from mongo %>
+    <form id="form" method='POST' action="/messages">
       <input id="name" autocomplete="off" placeholder="name"/>
-      <input id="m" autocomplete="off" placeholder="message"/><button>Send</button>
+      <input id="message" autocomplete="off" placeholder="message"/><button>Send</button>
     </form>
   </div>
 </div>
