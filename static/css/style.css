@@ -114,8 +114,9 @@ input, textarea{
 #form { background: #000; bottom: 0; width: 100%; position:absolute;}
 #form input { border: 1px solid black; width: 90%; margin-right: .5%; }
 #form button { width: 20%; background: rgb(130, 224, 255); border: none; font-family: 'Raleway', sans-serif; font-size: 15px; height:25px}
-#messages {list-style-type: none; margin: 0; padding: 0;overflow: scroll; height:400px; background: #ccddff;transform:rotate(180deg);direction: rtl;}
-#messages li {padding: 5px 10px; text-align: left; font-family: 'Indie Flower', cursive; margin: 0px; transform:rotate(180deg);direction: rtl;}
+/* https://codepen.io/muratcorlu/pen/KzmQEP transform:rotate(180deg);direction: rtl;*/ 
+#messages {list-style-type: none; margin: 0; padding: 0;overflow: scroll; height:400px; background: #ccddff;}
+#messages li {padding: 5px 10px; text-align: left; font-family: 'Indie Flower', cursive; margin: 0px; }
 #messages li:nth-child(odd) { background: #eee; text-align: left;  font-family: 'Indie Flower', cursive;margin: 0px;}
 #window {width: 100%; height:500px; margin:auto; position:relative}
 #chatwindow{width: 23%;border:2px solid black; margin: 0 0 5px 5px; position:fixed; left:0; bottom: 0;box-shadow: 3px 3px 3px #ccc;}
