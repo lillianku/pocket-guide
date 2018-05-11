@@ -18,7 +18,7 @@ $(function () {
     socket.emit('chat message', data);
     $('#message').val('');
     //https://stackoverflow.com/questions/45105992/node-js-send-data-to-backend-with-ajax
-    $.post('/messages', { name: `${data.name}`, message:`${data.message}`});
+    $.post('/messages', {name: `${data.name}`, message:`${data.message}`});
     return false;
   });
 

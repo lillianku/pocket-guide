@@ -40,3 +40,18 @@ Users must be able to create, read, and modify a list of places they'd like to v
 ![Wireframe](wireframe/packing.png)
 ![Wireframe](wireframe/places.png)
 ![Wireframe](wireframe/weather.png)
+
+### Struggles
+The most challenging part was figuring out how to store my chat messages and then getting them to load again on each page load. I learned that front end js files will conflict with the backend js files, so I have to use AJAX to get/post things.
+
+### App
+* Deployed App: https://lit-tundra-11159.herokuapp.com
+![Homepage](screenshots/home.png)
+![Places](screenshots/places.png)
+![Place](screenshots/place.png)
+![Packing](screenshots/packing.png)
+![Weather](screenshots/weather.png)
+
+### Future Goals
+
+In the future, I'd like to be able to have private sessions. Where each trip has it's own ID, and you need the ID to enter the session. This way there can be multiple trips planned. 
