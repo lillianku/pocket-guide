@@ -49,7 +49,7 @@ app.post('/messages', (req, res)=>{
 
 app.get('/messages', (req, res)=>{
   Message.find().then(messages=>{
-    res.send(messages);//Postman testing
+    res.send(messages);
   });
 });
 

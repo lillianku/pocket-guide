@@ -2,11 +2,10 @@
   <div id="window">
     <div id="title"><p>Chat</p></div>
     <ul id="messages"></ul>
-      <%# insert exisiting messages from mongo %>
-    <form id="form" method='POST' action="/messages">
+    <form id="form">
       <input id="name" name="name" type='text' placeholder="name"/>
       <input id="message"  name="message" type='text' placeholder="message"/>
-      <input class="submit" type='submit' value='Send'/>
+      <input id="chatbutton" class="submit" type='submit' value='Send'/>
     </form>
   </div>
 </div>

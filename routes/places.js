@@ -35,13 +35,10 @@ PlacesRouter.post('/', (req, res) => {
 PlacesRouter.get('/:id', (req, res)=>{
     let id = req.params.id;
     Place.findById(id).then(place=>{
-      // retrieve message from mongo
       res.render('place.ejs', {
         templatePlace: place
-        //templateMessage: message
       });
       //res.send(trip);//Postman testing
-      //retrieve message from mongo
     }, error => {
       res.status(400).send('400 Bad Request')
     });
